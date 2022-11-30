@@ -1,28 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="container-fluid">
+    <HeaderPage></HeaderPage>
+    <MainPage />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import MainPage from "./components/MainPage.vue";
+import HeaderPage from "@/components/HeaderPage.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    MainPage,
+    HeaderPage,
   },
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+$netflixred: #e50914;
+$netflixblack: #222222;
+$netflixfaq: #303030;
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Lato", sans-serif;
 }
 </style>
