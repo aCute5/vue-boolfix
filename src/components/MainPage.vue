@@ -30,7 +30,7 @@
           :name="movie.title"
           :originalName="movie.original_title"
           :langList="langList"
-          :vote="vote_average"
+          :vote="movie.vote_average"
         />
       </div>
     </div>

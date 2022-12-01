@@ -8,9 +8,15 @@
       />
       <div class="card-back">
         <div class="card-body">
-          <h5 class="card-title">{{ name }}</h5>
-          <h5 class="card-title">{{ originaltitle }}</h5>
-          <h6 class="card-title">Lingua Originale: {{ originallanguage }}</h6>
+          <h5 class="card-title text-bold">
+            Title: <strong>{{ name }}</strong>
+          </h5>
+          <h5 class="card-title">
+            Original Title: <strong>{{ originaltitle }}</strong>
+          </h5>
+          <h6 class="card-title">
+            Lingua Originale: <strong>{{ originallanguage }}</strong>
+          </h6>
           <p class="card-text">
             Valutazione:
             <span>
@@ -35,7 +41,6 @@ export default {
 
   props: {
     movie: Object,
-    langList: Array,
     name: String,
     originaltitle: String,
     originallanguage: String,
@@ -64,13 +69,15 @@ export default {
   justify-content: center;
   align-content: center;
 }
-
+.card-title {
+  font-size: 1.5rem;
+}
 .card-img {
   width: 100%;
   height: 100%;
 }
 
 .vote {
-  color: white;
+  color: yellow;
 }
 </style>
