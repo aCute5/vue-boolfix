@@ -9,9 +9,18 @@
       <div class="card-body">
         <h5 class="card-title">{{ name }}</h5>
         <h5 class="card-title">{{ originaltitle }}</h5>
+        <h6 class="card-title">Lingua Originale: {{ originallanguage }}</h6>
         <p class="card-text">
-          Lingua Originale: {{ originallanguage }}
-          <span></span>
+          Valutazione:
+          <span>
+            <font-awesome-icon
+              v-for="star in vote"
+              :key="star"
+              class="vote"
+              icon="fa-solid fa-star"
+              >{{ star }}</font-awesome-icon
+            >
+          </span>
         </p>
       </div>
     </div>
@@ -28,18 +37,17 @@ export default {
     name: String,
     originaltitle: String,
     originallanguage: String,
+    vote: Number,
   },
-
-  methods: {
-    getStars(vote) {
-      return Math.round(vote / 2);
-    },
-  },
+  methods: {},
 };
 </script>
 
 <style lang="scss" scoped>
 .card {
   background-color: black;
+}
+.vote {
+  color: white;
 }
 </style>

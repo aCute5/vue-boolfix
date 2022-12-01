@@ -11,6 +11,7 @@
           :originallanguage="movie.original_language"
           :originaltitle="movie.original_title"
           :langList="langList"
+          :vote="movie.vote_average"
         />
       </div>
 
@@ -24,6 +25,7 @@
           :name="movie.title"
           :originalName="movie.original_title"
           :langList="langList"
+          :vote="vote_average"
         />
       </div>
     </div>
@@ -41,6 +43,7 @@ export default {
   },
 
   props: {
+    vote: Number,
     movieList: Array,
     seriesList: Array,
     langList: Array,
