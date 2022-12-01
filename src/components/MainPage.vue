@@ -1,94 +1,69 @@
 <template>
-  <div class="container-fluid">
-    <div class="flix-container">
-      <ul class="flix-items">
-        <li v-for="content in arrContent" :key="content">
-          <a href="#">
-            <div class="content">
-              <h2>{{ content.title }}</h2>
-            </div>
-          </a>
-        </li>
-      </ul>
+  <main>
+    <div>
+      <h1 v-if="movieList.length > 0" class="text-white">FILM</h1>
+      <div class="container">
+        <movie-card
+          v-for="movie in movieList"
+          :key="movie.id"
+          :movie="movie"
+          :name="movie.title"
+          :originallanguage="movie.original_language"
+          :originaltitle="movie.original_title"
+          :langList="langList"
+        />
+      </div>
+
+      <h1 v-if="seriesList.length > 0" class="text-white">SERIE TV</h1>
+
+      <div class="container">
+        <movie-card
+          v-for="movie in seriesList"
+          :key="movie.id"
+          :movie="movie"
+          :name="movie.title"
+          :originalName="movie.original_title"
+          :langList="langList"
+        />
+      </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
-import axios from "axios";
+import MovieCard from "./MovieCard.vue";
 
 export default {
-  name: "MainPage",
+  name: "App",
+
+  components: {
+    MovieCard,
+  },
+
   props: {
-    msg: String,
-  },
-  data() {
-    return {
-      arrContent: null,
-      urlApi:
-        "https://api.themoviedb.org/3/movie/550?api_key=cc0c92c3f4182736e2226b57b46f8728",
-    };
-  },
-  created() {
-    axios.get(this.urlApi).then((axiosResponse) => {
-      console.log(axiosResponse);
-      this.arrContent = axiosResponse;
-    });
+    movieList: Array,
+    seriesList: Array,
+    langList: Array,
+    popular: Boolean,
+    show: Boolean,
   },
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 $netflixred: #e50914;
 $netflixblack: #222222;
 $netflixfaq: #303030;
-.container-fluid {
-  background-color: black;
-  border-top: 10px solid $netflixfaq;
-  border-bottom: 10px solid $netflixfaq;
-  display: flex;
-  align-items: center;
-  height: 80vh;
-}
-.flix-container {
+main {
+  padding: 100px 0;
+  color: #bebebe;
+  text-align: center;
   position: relative;
-  background-color: $netflixfaq;
-  height: 270px;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flix-items {
-  height: 20%;
-  width: 100%;
-
-  li {
-    position: relative;
-    vertical-align: middle;
-    display: inline-block;
-    list-style: none;
-    width: 200px;
-    height: 120px;
-    background-image: url("content.");
-    transition-duration: 0.5s;
-    overflow: hidden;
-    cursor: pointer;
-
-    .bg-img {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center top;
-    }
-
-    &:hover {
-      transition-delay: 0.5s;
-      width: 400px;
-      height: 250px;
-    }
+  .container {
+    gap: 2rem;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 </style>

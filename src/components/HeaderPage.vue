@@ -1,14 +1,25 @@
 <template>
-  <nav class="navbar navbar-light bg-light justify-content-between">
+  <nav class="navbar justify-content-between">
     <a class="navbar-brand">Booflix</a>
-    <form class="form-inline">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">Serie TV</li>
+      <li class="nav-item">FILM</li>
+    </ul>
+    <form action="" @submit.prevent="SearchMovie()">
       <input
         class="form-control mr-sm-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
+        type="text"
+        placeholder="Search Movie"
+        v-model="selectedMovie"
+        @keyup.enter="SearchMovie(selectedMovie)"
       />
-      <button type="button" class="btn btn-danger">Cerca</button>
+      <button
+        @click="SearchMovie(selectedMovie)"
+        type="submit"
+        class="btn btn-danger"
+      >
+        Cerca
+      </button>
     </form>
   </nav>
 </template>
@@ -16,6 +27,20 @@
 <script>
 export default {
   name: "HeaderPage",
+  data() {
+    return {
+      selectedMovie: "",
+    };
+  },
+  props: {
+    show: Boolean,
+  },
+  methods: {
+    SearchMovie(selectedMovie) {
+      this.$emit("movies", selectedMovie);
+      this.selectedMovie = "";
+    },
+  },
 };
 </script>
 
@@ -26,6 +51,9 @@ $netflixfaq: #303030;
 .navbar-brand {
   font-size: 2rem;
   color: $netflixred;
+}
+.nav-item {
+  color: white;
 }
 input {
   max-width: 200px;
