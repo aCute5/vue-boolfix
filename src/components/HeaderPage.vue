@@ -1,10 +1,9 @@
 <template>
   <nav class="navbar justify-content-between">
     <a class="navbar-brand">Booflix</a>
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item">Serie TV</li>
-      <li class="nav-item">FILM</li>
-    </ul>
+
+    <li class="nav-item">Serie TV</li>
+    <li class="nav-item">FILM</li>
     <form action="" @submit.prevent="SearchMovie()">
       <input
         class="form-control mr-sm-2"
@@ -54,6 +53,8 @@ $netflixfaq: #303030;
 }
 .nav-item {
   color: white;
+  list-style-type: none;
+  font-size: 2rem;
 }
 input {
   max-width: 200px;

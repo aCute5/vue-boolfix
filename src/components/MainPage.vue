@@ -2,6 +2,11 @@
   <main>
     <div>
       <h1 v-if="movieList.length > 0" class="text-white">FILM</h1>
+      <div v-else>
+        <h1 class="text-white empty">
+          Trova la serieTV e i film che fanno per te
+        </h1>
+      </div>
       <div class="container">
         <movie-card
           v-for="movie in movieList"
@@ -67,6 +72,9 @@ main {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+  }
+  .empty {
+    font-size: 4rem;
   }
 }
 </style>
