@@ -2,8 +2,8 @@
   <nav class="navbar justify-content-between">
     <a class="navbar-brand">Booflix</a>
 
-    <li class="nav-item">Serie TV</li>
-    <li class="nav-item">FILM</li>
+    <li class="nav-item"><a href="">Serie TV</a></li>
+    <li class="nav-item"><a href="">FILM</a></li>
     <form action="" @submit.prevent="SearchMovie()">
       <input
         class="form-control mr-sm-2"
@@ -62,6 +62,10 @@ input {
 form {
   display: flex;
   gap: 1rem;
+}
+a {
+  text-decoration: none;
+  color: white;
 }
 .btn {
   padding: 0.5rem;

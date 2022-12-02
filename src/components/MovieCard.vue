@@ -70,6 +70,9 @@ export default {
 .card:hover .card-img {
   opacity: 0;
 }
+.card:hover {
+  transform: scale(1.1);
+}
 .card:hover .card-back {
   position: absolute;
   display: flex;
