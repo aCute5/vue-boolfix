@@ -29,6 +29,9 @@
                 icon="fa-solid fa-star"
                 >{{ star }}</font-awesome-icon
               >
+              <p class="card-text">
+                {{ overview }}
+              </p>
             </span>
           </p>
         </div>
@@ -50,6 +53,7 @@ export default {
     originaltitle: String,
     originallanguage: String,
     vote: Number,
+    overview: String,
   },
   methods: {},
 };
@@ -68,11 +72,13 @@ export default {
 }
 .card:hover .card-back {
   position: absolute;
-  left: 50%;
-  right: 50%;
   display: flex;
   justify-content: center;
   align-content: center;
+  width: 100%;
+}
+.card-back .card-body {
+  align-items: center;
 }
 .card-title {
   font-size: 1.5rem;

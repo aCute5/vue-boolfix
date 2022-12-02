@@ -17,6 +17,7 @@
           :originaltitle="movie.original_title"
           :langList="langList"
           :vote="movie.vote_average"
+          :overview="movie.overview"
         />
       </div>
 
@@ -28,7 +29,6 @@
           :key="movie.id"
           :movie="movie"
           :name="movie.title"
-          :originallanguage="movie.original_language"
           :originalName="movie.original_title"
           :langList="langList"
           :vote="movie.vote_average"
@@ -53,8 +53,6 @@ export default {
     movieList: Array,
     seriesList: Array,
     langList: Array,
-    popular: Boolean,
-    show: Boolean,
   },
 };
 </script>
