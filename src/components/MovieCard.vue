@@ -15,8 +15,10 @@
             Original Title: <strong>{{ originaltitle }}</strong>
           </h5>
           <h6 class="card-title">
-            Lingua Originale: <strong>{{ originallanguage }}</strong>
+            Lingua Originale:
+            <strong> <lang-flag :iso="originallanguage" /></strong>
           </h6>
+
           <p class="card-text">
             Valutazione:
             <span>
@@ -36,9 +38,12 @@
 </template>
 
 <script>
+import LangFlag from "vue-lang-code-flags";
 export default {
   name: "MovieCard",
-
+  components: {
+    LangFlag,
+  },
   props: {
     movie: Object,
     name: String,
