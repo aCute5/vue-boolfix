@@ -1,40 +1,38 @@
 <template>
-  <div class="container-cards">
-    <div class="card" style="width: 20rem">
-      <img
-        :src="`https://www.themoviedb.org/t/p/original${movie.poster_path}`"
-        class="card-img"
-        alt="..."
-      />
-      <div class="card-back">
-        <div class="card-body">
-          <h5 class="card-title text-bold">
-            Title: <strong>{{ name }}</strong>
-          </h5>
-          <h5 class="card-title">
-            Original Title: <strong>{{ originaltitle }}</strong>
-          </h5>
-          <h6 class="card-title">
-            Lingua Originale:
-            <strong> <lang-flag :iso="originallanguage" /></strong>
-          </h6>
+  <div class="card" style="width: 20rem">
+    <img
+      :src="`https://www.themoviedb.org/t/p/original${movie.poster_path}`"
+      class="card-img"
+      alt="..."
+    />
+    <div class="card-back">
+      <div class="card-body">
+        <h5 class="card-title text-bold">
+          Title: <strong>{{ name }}</strong>
+        </h5>
+        <h5 class="card-title">
+          Original Title: <strong>{{ originaltitle }}</strong>
+        </h5>
+        <h6 class="card-title">
+          Lingua Originale:
+          <strong> <lang-flag :iso="originallanguage" /></strong>
+        </h6>
 
-          <p class="card-text">
-            Valutazione:
-            <span>
-              <font-awesome-icon
-                v-for="star in vote"
-                :key="star"
-                class="vote"
-                icon="fa-solid fa-star"
-                >{{ star }}</font-awesome-icon
-              >
-              <p class="card-text">
-                {{ overview }}
-              </p>
-            </span>
-          </p>
-        </div>
+        <p class="card-text">
+          Valutazione:
+          <span>
+            <font-awesome-icon
+              v-for="star in vote"
+              :key="star"
+              class="vote"
+              icon="fa-solid fa-star"
+              >{{ star }}</font-awesome-icon
+            >
+            <p class="card-text">
+              {{ overview }}
+            </p>
+          </span>
+        </p>
       </div>
     </div>
   </div>
@@ -63,6 +61,7 @@ export default {
 .card {
   background-color: black;
   position: relative;
+  flex-basis: 15%;
 }
 .card-back {
   display: none;
@@ -90,9 +89,6 @@ export default {
   width: 100%;
   height: 100%;
 }
-.card-body {
-}
-
 .vote {
   color: yellow;
 }

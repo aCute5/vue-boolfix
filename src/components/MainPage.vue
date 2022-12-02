@@ -7,7 +7,7 @@
           Trova la serieTV e i film che fanno per te
         </h1>
       </div>
-      <div class="container">
+      <div class="container-fluid">
         <movie-card
           v-for="movie in movieList"
           :key="movie.id"
@@ -23,7 +23,7 @@
 
       <h1 v-if="seriesList.length > 0" class="text-white">SERIE TV</h1>
 
-      <div class="container">
+      <div class="container-fluid">
         <movie-card
           v-for="movie in seriesList"
           :key="movie.id"
@@ -66,10 +66,10 @@ main {
   color: #bebebe;
   text-align: center;
   position: relative;
-  .container {
+  .container-fluid {
     gap: 2rem;
-    margin: 0 auto;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
   }
   .empty {
