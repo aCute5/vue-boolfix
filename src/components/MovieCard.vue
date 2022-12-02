@@ -81,6 +81,8 @@ export default {
   width: 100%;
   height: 100%;
 }
+.card-body {
+}
 
 .vote {
   color: yellow;

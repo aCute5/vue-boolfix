@@ -28,6 +28,7 @@
           :key="movie.id"
           :movie="movie"
           :name="movie.title"
+          :originallanguage="movie.original_language"
           :originalName="movie.original_title"
           :langList="langList"
           :vote="movie.vote_average"
